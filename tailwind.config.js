@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#172B4D",
+        accent: "#E2B203",
+        'darkPeach': '#BA9B88',
+        'textColor': '#2F2F2F',
+      },
       container: {
         center: true,
         padding: {
@@ -26,13 +32,6 @@ export default {
         } 
       }
     },
-    colors: {
-      primary: "#172B4D",
-      accent: "#E2B203",
-      'darkPeach': '#BA9B88',
-      'textColor': '#2F2F2F',
-    },
-
     fontFamily: {
       'poppins': ["Poppins", "serif"],
       'display': ["Oswald", "serif"],
