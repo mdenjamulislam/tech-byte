@@ -23,7 +23,7 @@ export default {
           'xl': '1280px',
           '2xl': '1536px',
           '3xl': '1600px'
-        }
+        } 
       }
     },
     colors: {
@@ -51,5 +51,7 @@ export default {
       '6xl': '4rem',
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
