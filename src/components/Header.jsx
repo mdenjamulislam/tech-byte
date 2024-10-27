@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import Logo from "../assets/TechByte.png";
 import { Link } from "react-router-dom";
+import { MdOutlineLogin } from "react-icons/md";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
+
     const navLinks = (
         <>
             <li>
@@ -18,8 +22,8 @@ const Header = () => {
         </>
     );
     return (
-        <header className="p-4">
-            <div className="w-full lg:max-w-3xl xl:max-w-6xl mx-auto bg-primary rounded-xl lg:rounded-3xl">
+        <header className="p-4 relative">
+            <div className="w-full lg:max-w-3xl xl:max-w-5xl mx-auto bg-primary rounded-xl lg:rounded-3xl">
                 <div className="navbar px-3 md:px-6 lg:px-10 py-3 lg:py-4 text-white">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -38,7 +42,28 @@ const Header = () => {
                         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
                     </div>
                     <div className="navbar-end">
-                        <Link to="/login">Login</Link>
+                        {user ? (
+                            <div className="dropdown dropdown-end">
+                                <div tabIndex={0} role="button" className="btn btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img alt="" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                    </div>
+                                </div>
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                    <li>
+                                        <a className="justify-between">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a>Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        ) : (
+                            <Link to="/login" className="flex items-center gap-2">
+                                <MdOutlineLogin />
+                                <span>Login</span>
+                            </Link>
+                        )}
                     </div>
                 </div>
                 {/* End of the navbar */}

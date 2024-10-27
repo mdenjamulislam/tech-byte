@@ -11,16 +11,12 @@ export default {
         accent: "#E2B203",
         'darkPeach': '#BA9B88',
         'textColor': '#2F2F2F',
+        'lightGray': '#EDEEF2',
       },
       container: {
         center: true,
         padding: {
           DEFAULT: '1rem',
-          sm: '1rem',
-          md: '1rem',
-          lg: '1.5rem',
-          xl: '4rem',
-          '2xl': '10rem'
         },
         screens: {
           'sm': '640px',

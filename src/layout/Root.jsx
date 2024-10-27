@@ -5,8 +5,10 @@ import Header from '../components/Header';
 const Root = () => {
     return (
         <>
-            <Header/>
-            <Outlet/>
+            <Header />
+            <main className='-mt-14'>
+                <Outlet />
+            </main>
         </>
     );
 };

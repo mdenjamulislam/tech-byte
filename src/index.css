@@ -35,4 +35,15 @@
     .heading--six {
         @apply text-sm md:text-base lg:text-lg;
     }
+
+
+    /* Button */
+
+    .btn--primary {
+        @apply flex items-center justify-center px-4 md:px-6 lg:px-8 py-2 lg:py-3 gap-2 bg-primary text-white rounded-2xl lg:rounded-3xl hover:bg-accent transition-all duration-300;
+    }
+
+    .btn--accent {
+        @apply flex items-center justify-center px-4 md:px-6 lg:px-8 py-2 lg:py-3 gap-2 bg-accent text-white rounded-2xl lg:rounded-3xl hover:bg-primary transition-all duration-300;
+    }
 }
