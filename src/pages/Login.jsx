@@ -1,8 +1,26 @@
 import { MdOutlineLogin } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
+    const { loginUser } = useContext(AuthContext);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        loginUser(email, password)
+            .then((result) => {
+                console.log(result.user);
+            })
+            .catch((error) => {
+                console.log(error.message);
+            });
+    };
     return (
         <div className="container hero bg-lightGray min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse items-center gap-6 md:gap-10 xl:gap-16">
@@ -11,7 +29,7 @@ const Login = () => {
                     <p>Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                 </div>
                 <div className="flex flex-col bg-base-100 w-full max-w-md p-4 lg:p-6 shrink-0 shadow-2xl rounded-2xl xl:rounded-3xl">
-                    <form className="space-y-3">
+                    <form onSubmit={handleLogin} className="space-y-3">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -33,9 +51,9 @@ const Login = () => {
                     </form>
                     <div className="mt-2">
                         <p className="text-sm">
-                            Are you new?{" "}
-                            <Link to="/login" className="text-accent">
-                                Login now.
+                            Are you new? {" "}
+                            <Link to="/register" className="text-accent">
+                                Register
                             </Link>
                         </p>
                     </div>

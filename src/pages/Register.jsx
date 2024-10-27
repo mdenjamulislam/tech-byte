@@ -56,7 +56,7 @@ const Register = () => {
                     </form>
                     <div className="mt-2">
                         <p className="text-sm">
-                            Are you new? <Link to="/login" className="text-accent">Login now.</Link>
+                            Have an accout. <Link to="/login" className="text-accent">Login now.</Link>
                         </p>
                     </div>
                     <div className="divider">sign up with</div>
