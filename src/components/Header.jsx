@@ -6,7 +6,7 @@ import { MdOutlineLogin } from "react-icons/md";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const navLinks = (
         <>
@@ -21,6 +21,16 @@ const Header = () => {
             </li>
         </>
     );
+
+    const handleLogOut = () => {
+        logOut()
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
+    }
     return (
         <header className="p-4 relative">
             <div className="w-full lg:max-w-3xl xl:max-w-5xl mx-auto bg-primary rounded-xl lg:rounded-3xl">
@@ -54,7 +64,7 @@ const Header = () => {
                                         <a className="justify-between">Profile</a>
                                     </li>
                                     <li>
-                                        <a>Logout</a>
+                                        <a onClick={handleLogOut}>Logout</a>
                                     </li>
                                 </ul>
                             </div>
