@@ -15,7 +15,7 @@
 @layer components {
     /* heading */
     .display {
-        @apply text-6xl text-primary font-display;
+        @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-semibold text-primary font-display;
     }
     .heading--one {
         @apply text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary;
