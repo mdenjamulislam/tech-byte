@@ -64,6 +64,12 @@ const Header = () => {
                                         <a className="justify-between">Profile</a>
                                     </li>
                                     <li>
+                                        <Link to="/add-product">Add Product</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/add-brand">Add Brand</Link>
+                                    </li>
+                                    <li>
                                         <a onClick={handleLogOut}>Logout</a>
                                     </li>
                                 </ul>
