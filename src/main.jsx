@@ -10,6 +10,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import AddProduct from "./components/AddProduct.jsx";
+import AddBrand from "./components/AddBrand.jsx";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: '/add-product',
                 element: <AddProduct/>
+            },
+            {
+                path: '/add-brand',
+                element: <AddBrand/>
             }
         ],
     },

@@ -50,7 +50,7 @@ const AddProduct = () => {
                         <textarea type="text" name="description" placeholder="Product Descriptions" className="textarea textarea-bordered"></textarea>
                     </div>
                     <div className="form-control col-span-full">
-                        <label className="label label-text">Descriptions</label>
+                        <label className="label label-text">Product Photo</label>
                         <input type="file" className="file-input w-full max-w-xs" />
                     </div>
                     <div className="col-span-full flex items-center gap-3 md:gap-4">
