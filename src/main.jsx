@@ -16,28 +16,29 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
-        errorElement: <ErrorPage/>,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
                 element: <Home />,
+                loader: () => fetch("http://localhost:5000/products"),
             },
             {
-                path: '/login',
-                element: <Login/>
+                path: "/login",
+                element: <Login />,
             },
             {
-                path: '/register',
-                element: <Register/>
+                path: "/register",
+                element: <Register />,
             },
             {
-                path: '/add-product',
-                element: <AddProduct/>
+                path: "/add-product",
+                element: <AddProduct />,
             },
             {
-                path: '/add-brand',
-                element: <AddBrand/>
-            }
+                path: "/add-brand",
+                element: <AddBrand />,
+            },
         ],
     },
 ]);

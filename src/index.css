@@ -46,4 +46,12 @@
     .btn--accent {
         @apply flex items-center justify-center px-4 md:px-6 lg:px-8 py-2 lg:py-3 gap-2 bg-accent text-white rounded-2xl lg:rounded-3xl hover:bg-primary transition-all duration-300;
     }
+
+    .btn--light {
+        @apply flex items-center justify-center px-2 md:px-3 lg:px-4 py-1.5 md:py-2 lg:py-3 gap-1 bg-lightGray text-textColor rounded-lg lg:rounded-xl hover:text-primary hover:gap-2 transition-all duration-300;
+    }
+
+    .section--padding {
+        @apply py-4 md:py-8 lg:py-10 xl:py-12 2xl:py-16;
+    }
 }
