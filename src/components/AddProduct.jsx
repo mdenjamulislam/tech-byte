@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import Swal from 'sweetalert2'
 
 const AddProduct = () => {
-
     const handleAddProduct = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -11,10 +11,36 @@ const AddProduct = () => {
         const category = form.category.value;
         const rating = form.rating.value;
         const description = form.description.value;
-        
-        const product = { title, price, brand, category, rating, description };
-        console.log(product);
-    }
+        const photo = form.photo_url.value;
+
+        const newProduct = { title, price, brand, category, rating, description, photo };
+        console.log(newProduct);
+
+        // send data to the server
+        fetch("http://localhost:5000/product", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(newProduct),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Product added:", data);
+
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Product added succefully.",
+                        icon: "success",
+                        confirmButtonText: "Ok",
+                    });
+                    
+                    
+                }
+            })
+            .catch((error) => console.error("Error adding product:", error));
+    };
     return (
         <section className="relative overflow-hidden bg-lightGray py-10 md:py-20 lg:py-28 xl:py-36">
             <div className="container">
@@ -29,13 +55,7 @@ const AddProduct = () => {
                     </div>
                     <div className="form-control col-span-2">
                         <label className="label label-text">Brand</label>
-                        <select class="select select-bordered w-full" required>
-                            <option disabled selected>
-                                Select Brand
-                            </option>
-                            <option>Apple</option>
-                            <option>Google</option>
-                        </select>
+                        <input type="text" name="brand" placeholder="Brand" className="input input-bordered" required />
                     </div>
                     <div className="form-control col-span-2 md:col-span-1">
                         <label className="label label-text">Category</label>
@@ -51,7 +71,7 @@ const AddProduct = () => {
                     </div>
                     <div className="form-control col-span-full">
                         <label className="label label-text">Product Photo</label>
-                        <input type="file" className="file-input w-full max-w-xs" />
+                        <input type="text" name="photo_url" placeholder="Photo url" className="input input-bordered" />
                     </div>
                     <div className="col-span-full flex items-center gap-3 md:gap-4">
                         <button type="reset" className="btn--accent">
