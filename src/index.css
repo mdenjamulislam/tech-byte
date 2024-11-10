@@ -54,4 +54,8 @@
     .section--padding {
         @apply py-4 md:py-8 lg:py-10 xl:py-12 2xl:py-16;
     }
+
+    .social-icon {
+        @apply flex h-9 w-9 items-center justify-center text-base text-textColor bg-lightGray rounded-md hover:bg-accent hover:text-white transition-all duration-300;
+    }
 }

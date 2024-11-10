@@ -12,6 +12,7 @@ export default {
         'darkPeach': '#BA9B88',
         'textColor': '#2F2F2F',
         'lightGray': '#EDEEF2',
+        'overlay': 'rgb(23, 43, 77, .6)',
       },
       container: {
         center: true,
